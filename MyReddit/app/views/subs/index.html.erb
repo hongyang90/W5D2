@@ -1,0 +1,26 @@
+
+
+<h1>Subs, bitches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @subs.each do |sub| %>
+
+        <h3><%= sub.title %></h3><br>
+        <%= link_to 'Show', sub %> <br>
+        <%= link_to 'Edit', edit_sub_path(sub) %> <br>
+        <%= link_to 'Destroy', sub, method: :delete, data: { confirm: 'Are you sure?' } %> <br>
+    <h4>------------</h4>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sub', new_sub_path %>

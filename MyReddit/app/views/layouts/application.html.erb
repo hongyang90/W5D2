@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Capy-Reddit</title>
+    <link rel="shortcut icon" href="https://us.123rf.com/450wm/robuart/robuart1708/robuart170800032/84986155-stock-vector-capybara-cartoon-icon-in-flat-design.jpg?ver=6" />
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <img src=https://us.123rf.com/450wm/robuart/robuart1708/robuart170800032/84986155-stock-vector-capybara-cartoon-icon-in-flat-design.jpg?ver=6' height='50px' width="50px"/>
+      <% if logged_in? %>
+        Welcome, <%= current_user.username %>!
+        <form action="<%=session_url%>" method='post'>
+          <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+          <input type="hidden" name='_method' value='delete' >
+          <input type="submit" value='Logout!'></form>
+      <% else %>
+        How did you get here?
+      <% end %>
+    <%= yield %>
+  </body>
+</html>

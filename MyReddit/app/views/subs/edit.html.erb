@@ -1,0 +1,23 @@
+<h1>New Submission!</h1>
+
+<form action="<%= sub_url(@sub) %>" method="post">
+  <input type='hidden' name='_method' value='patch'>
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  <p>Hello, <%=current_user.username%></p>
+  <label for="">
+  Title: 
+    <input type="text" name="sub[title]" value='<%=@sub.title%>'>
+  </label><br><br>
+  <label for="">
+  Description:<br>
+   <textarea rows='5' columns='500' name='sub[description]'>
+  <%=@sub.description%>
+   </textarea>
+  </label><br>
+
+  <input type="submit" value="Submit!!!">
+
+</form>
+
+
+

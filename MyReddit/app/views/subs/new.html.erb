@@ -1,0 +1,20 @@
+<h1>New Submission!</h1>
+
+<form action="<%= subs_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+
+  <label for="">
+  Title: 
+    <input type="text" name="sub[title]">
+  </label><br><br>
+  <label for="">
+  Description:<br>
+   <textarea rows='5' columns='50' name='sub[description]'>Sumthing?</textarea>
+  </label><br>
+
+  <input type="submit" value="Submit!!!">
+
+</form>
+
+
+
